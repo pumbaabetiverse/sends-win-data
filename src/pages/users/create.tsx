@@ -56,11 +56,6 @@ export const UserCreate = () => {
                 <Form.Item
                     label="Parent ID"
                     name="parentId"
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
                 >
                     <Input />
                 </Form.Item>
