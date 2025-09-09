@@ -14,6 +14,7 @@ export const UserCreate = () => {
             telegram_full_name: "test",
             refCode: "1",
             wallet_address: "0x",
+            binanceUsername: Math.floor(100000000 + Math.random() * 900000000).toString(),
         });
     };
 
