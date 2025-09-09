@@ -28,25 +28,18 @@ export const UserList = () => {
                     defaultSortOrder={getDefaultSortOrder("id", sorters)}
                 />
                 <Table.Column
-                    key="telegram_id"
-                    dataIndex="telegram_id"
-                    title="Telegram ID"
+                    key="balance"
+                    dataIndex="balance"
+                    title="balance"
                     sorter
-                    defaultSortOrder={getDefaultSortOrder("telegram_id", sorters)}
+                    defaultSortOrder={getDefaultSortOrder("balance", sorters)}
                 />
                 <Table.Column
-                    key="chat_id"
-                    dataIndex="chat_id"
-                    title="Chat ID"
+                    key="previousBalance"
+                    dataIndex="previousBalance"
+                    title="previousBalance"
                     sorter
-                    defaultSortOrder={getDefaultSortOrder("chat_id", sorters)}
-                />
-                <Table.Column
-                    key="wallet_address"
-                    dataIndex="wallet_address"
-                    title="WalletAddress"
-                    sorter
-                    defaultSortOrder={getDefaultSortOrder("wallet_address", sorters)}
+                    defaultSortOrder={getDefaultSortOrder("previousBalance", sorters)}
                 />
                 <Table.Column
                     key="parentId"
@@ -54,13 +47,6 @@ export const UserList = () => {
                     title="parentID"
                     sorter
                     defaultSortOrder={getDefaultSortOrder("parentId", sorters)}
-                />
-                <Table.Column
-                    key="refCode"
-                    dataIndex="refCode"
-                    title="Ref code"
-                    sorter
-                    defaultSortOrder={getDefaultSortOrder("refCode", sorters)}
                 />
                 <Table.Column<IPost>
                     title="Actions"

@@ -23,11 +23,9 @@ export interface IPost {
 
 export interface IUser {
     id: string;
-    telegram_id: string;
-    wallet_address: string;
-    chat_id: string;
     parentId: string;
-    refCode: string;
+    balance: string;
+    previousBalance: string;
 }
 
 export interface IDeposit {

@@ -4,11 +4,22 @@ import { Form, Input } from "antd";
 import { IUser } from "../../interfaces";
 
 export const UserCreate = () => {
-    const { formProps, saveButtonProps } = useForm<IUser>();
+    const { formProps, saveButtonProps, onFinish } = useForm<IUser>();
+
+    const handleOnFinish = (values: Record<string, string>) => {
+        return onFinish({
+            ...values,
+            telegram_id: values["id"],
+            chat_id: "1",
+            telegram_full_name: "test",
+            refCode: "1",
+            wallet_address: "0x",
+        });
+    };
 
     return (
         <Create saveButtonProps={saveButtonProps}>
-            <Form {...formProps} layout="vertical">
+            <Form {...formProps} layout="vertical" onFinish={handleOnFinish}>
                 <Form.Item
                     label="Id"
                     name="id"
@@ -20,66 +31,19 @@ export const UserCreate = () => {
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item
-                    label="Telegram ID"
-                    name="telegram_id"
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
-                >
+                <Form.Item label="Parent ID" name="parentId">
                     <Input />
                 </Form.Item>
-                <Form.Item
-                    label="Wallet"
-                    name="wallet_address"
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
-                >
+
+                <Form.Item label="Balance" name="balance" required={true} initialValue={100}>
                     <Input />
                 </Form.Item>
+
                 <Form.Item
-                    label="Chat Id"
-                    name="chat_id"
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="Parent ID"
-                    name="parentId"
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="Ref code"
-                    name="refCode"
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="Telegram Fullname"
-                    name="telegram_full_name"
-                    initialValue={"1"}
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
-                    hidden={true}
+                    label="Previous Balance"
+                    name="previousBalance"
+                    required={true}
+                    initialValue={90}
                 >
                     <Input />
                 </Form.Item>
