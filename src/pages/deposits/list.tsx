@@ -77,6 +77,13 @@ export const DepositList = () => {
                     defaultSortOrder={getDefaultSortOrder("toBinanceAccountId", sorters)}
                 />
                 <Table.Column
+                    key="payerUsername"
+                    dataIndex="payerUsername"
+                    title="From userId"
+                    sorter
+                    defaultSortOrder={getDefaultSortOrder("payerUsername", sorters)}
+                />
+                <Table.Column
                     key="createdAt"
                     dataIndex="createdAt"
                     title="createdAt"
