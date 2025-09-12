@@ -20,7 +20,7 @@ import { dataProvider, liveProvider } from "@refinedev/supabase";
 import { ConfigProvider, notification } from "antd";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 
-import { DepositCreate, DepositList } from "./pages/deposits";
+import { DepositCreate, DepositEdit, DepositList } from "./pages/deposits";
 import { UserCreate, UserEdit, UserList } from "./pages/users";
 import { supabaseClient } from "./utility";
 
@@ -332,7 +332,7 @@ const App: React.FC = () => {
                             <Route path="/deposits">
                                 <Route index element={<DepositList />} />
                                 <Route path="create" element={<DepositCreate />} />
-                                <Route path="edit/:id" element={<UserEdit />} />
+                                <Route path="edit/:id" element={<DepositEdit />} />
                             </Route>
                         </Route>
 

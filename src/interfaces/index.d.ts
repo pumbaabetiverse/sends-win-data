@@ -29,11 +29,15 @@ export interface IUser {
 }
 
 export interface IDeposit {
-    id: string;
+    id: number;
+    userId: string;
     orderId: string;
     note: string;
     amount: string;
     payout: string;
     createdAt: string;
     toBinanceAccountId: string;
+    result: string;
+    option: string;
+    payerUsername: string;
 }
